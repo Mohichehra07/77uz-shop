@@ -46,7 +46,7 @@ onMounted(() => {
     <div class="flex flex-wrap justify-start gap-10 rounded-md" v-show="!loading">
       <div class="w-[280px] h-[470px] border-gray-100 bg-white rounded-lg">
         <div class="relative">
-          <span @click="toggleLike"
+          <span @click="toggleLike()"
             class="absolute mt-3 ml-3 text-white text-[30px] icon-like"
           ></span>
           <img class="rounded-md" :src="props.item.image" alt="product" />

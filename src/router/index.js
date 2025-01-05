@@ -1,46 +1,43 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Products from '../views/Products.vue'
-import ProductSingle from '@/views/ProductSingle.vue'
-import Favourite from '@/views/Favourite.vue'
-
-
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import Products from "../views/Products.vue";
+import ProductSingle from "@/views/ProductSingle.vue";
+import Favourite from "../../src/views/Favourite.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      meta:{
-        layout:"defoult",
-        
+      path: "/",
+      name: "home",
+      meta: {
+        layout: "defoult",
       },
       component: HomeView,
     },
     {
-      path: '/products',
-      name: 'products',
-      meta:{
-        layout:"defoult"
+      path: "/products",
+      name: "products",
+      meta: {
+        layout: "defoult",
       },
       component: Products,
     },
     {
-      path:'/about/:id',
-      name:'about',
+      path: "/about/:id",
+      name: "about",
       meta: {
-        layout: "defoult"
+        layout: "defoult",
       },
       component: ProductSingle,
     },
     {
-      path: '/favourite',
-      name:'Favourite',
+      path: "/favourite",
+      name: "Favourite",
       meta: {
         layout: "empty",
-      }, 
-      component: Favourite
+      },
+      component: Favourite,
     },
     {
       path: "/:catchAll(.*)",
@@ -50,8 +47,7 @@ const router = createRouter({
       },
       component: () => import("../../src/views/404/index.vue"),
     },
-
   ],
-})
+});
 
-export default router
+export default router;
