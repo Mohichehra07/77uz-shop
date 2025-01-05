@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?t81252');
+  src:  url('fonts/icomoon.eot?t81252#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?t81252') format('truetype'),
+    url('fonts/icomoon.woff?t81252') format('woff'),
+    url('fonts/icomoon.svg?t81252#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Frame-2087326051-converted:before {
+  content: "\e919";
+}
+.icon-symbol .path1:before {
+  content: "\e91a";
+  color: rgb(56, 143, 243);
+}
+.icon-symbol .path2:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(56, 143, 243);
+}
+.icon-symbol .path3:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(56, 143, 243);
+  opacity: 0.64;
+}
+.icon-symbol .path4:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(56, 143, 243);
+  opacity: 0.48;
+}
+.icon-down-converted:before {
+  content: "\e916";
+}
+.icon-exit-converted:before {
+  content: "\e906";
+}
+.icon-liked:before {
+  content: "\e915";
+  color: #f00;
+}
+.icon-plant:before {
+  content: "\e903";
+}
+.icon-phone-one-converted:before {
+  content: "\e911";
+}
+.icon-car:before {
+  content: "\e902";
+}
+.icon-clean:before {
+  content: "\e914";
+}
+.icon-assessor:before {
+  content: "\e907";
+}
+.icon-blender:before {
+  content: "\e908";
+}
+.icon-relax:before {
+  content: "\e909";
+}
+.icon-heath:before {
+  content: "\e90a";
+}
+.icon-makeup:before {
+  content: "\e90b";
+}
+.icon-frige:before {
+  content: "\e90c";
+}
+.icon-gadget:before {
+  content: "\e90d";
+}
+.icon-fixed:before {
+  content: "\e90e";
+}
+.icon-shoes:before {
+  content: "\e90f";
+}
+.icon-pen:before {
+  content: "\e910";
+}
+.icon-builder:before {
+  content: "\e912";
+}
+.icon-walk:before {
+  content: "\e913";
+}
+.icon-bag:before {
+  content: "\e904";
+}
+.icon-man:before {
+  content: "\e901";
+}
+.icon-girl:before {
+  content: "\e900";
+}
+.icon-down:before {
+  content: "\e918";
+}
+.icon-up:before {
+  content: "\e917";
+}
+.icon-like:before {
+  content: "\e905";
+}
