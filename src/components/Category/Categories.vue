@@ -28,20 +28,23 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex justify-center ">
-      <input type="search" placeholder="Search" class="h-[40px] w-[300px] placeholder:pl-3"> 
-     <button class="w-[100px] h-[40px] rounded-lg text-white bg-black ">Search</button>
-   </div>
-  <section class="relative bg-white ">
-    <strong><h1 class="text-[25px] mb-10 text-center">Categories</h1></strong> 
 
-    <div class="grid pb-10 mt-10 md:grid-cols-2 lg:grid-cols-3 cotainerMain" v-show="!loading">
-      <CategoriesItem v-for="item in categories" :item="item" />
+
+  <section class="relative bg-white">
+    <strong><h1 class="text-[25px] mb-10 text-center">Categories</h1></strong>
+    <p class="text-[16px] text-center text-[#8E9297]">Вы можете найти все категории, которые вам нужны от покупателя</p>
+
+    <div v-if="!loading" class="grid pb-10 mt-10 md:grid-cols-2 lg:grid-cols-3 cotainerMain">
+      <CategoriesItem v-for="item in categories" :key="item.name" :item="item" />
     </div>
 
-    <div
-      class="grid pb-10 mt-10 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-5" v-show="loading">
-    <SkletLoading class="cotainerMain" type="category" v-for="i in 9" :key="i" v-show="loading" />
+    <div v-if="loading" class="grid pb-10 mt-10 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-5">
+      <SkletLoading class="cotainerMain" type="category" v-for="i in 9" :key="i" />
     </div>
   </section>
 </template>
+
+
+
+
+

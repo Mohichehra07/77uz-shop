@@ -1,20 +1,18 @@
 <script setup>
-import { defineProps } from "vue";
 import { ref, onMounted } from "vue";
- const loading = ref(false);
+
 const props = defineProps({
   item: {
-    type: Object,
     id: Number,
-    title: String,
-    region: String,
-    phone: String,
-    price: String,
+    descraption: String,
+    location: String,
+    phoneNumber: String,
+    cost: String,
     image: String,
-    time: String,
-    miniImage: String,
+    date: String,
   },
 });
+
 const like = ref(false);
 
 function toggleLike() {
@@ -38,42 +36,65 @@ onMounted(() => {
   const savedLikes = JSON.parse(localStorage.getItem("likedItems") || "[]");
   like.value = savedLikes.includes(props.item.id);
 });
-
 </script>
-<template>
 
-  <div class="cotainerMain">
-    <div class="flex flex-wrap justify-start gap-10 rounded-md" v-show="!loading">
-      <div class="w-[280px] h-[470px] border-gray-100 bg-white rounded-lg">
-        <div class="relative">
-          <span @click="toggleLike()"
-            class="absolute mt-3 ml-3 text-white text-[30px] icon-like"
-          ></span>
-          <img class="rounded-md" :src="props.item.image" alt="product" />
-        </div>
-        <div class="w-[238px] h-[190px] cursor-pointer p-5">
-          <div
-            class="w-[100px] text-center h-7 bg-[#EAEDF0] m-2 text-[14px] text-[#63676C] p-1"
+<template>
+  <div class="relative">
+    <button @click="toggleLike" class="absolute z-10 top-3 left-3">
+      <i
+        class="text-2xl text-white"
+        :class="like ? 'icon-liked' : 'icon-like'"
+      ></i>
+    </button>
+
+    <router-link
+      :to="'/products/' + item.id"
+      class="flex flex-col w-full h-full overflow-hidden bg-white border-2 border-white cursor-pointer product-card rounded-xl transition-300 group"
+    >
+      <div
+        class="flex-shrink-0 w-full h-64 max-sm:h-44 max-xs:h-30 rounded-t-xl"
+      >
+        <img
+          :src="props.item.image"
+          class="object-cover w-full h-full rounded-t-lg"
+          :alt="props.item.title"
+        />
+      </div>
+
+      <div class="flex flex-col items-start h-full p-2 md:p-5">
+        <div class="flex flex-col gap-1 my-2 md:my-4 md:gap-2">
+          <span
+            v-if="props.item.location"
+            class="px-2 pb-1 rounded-md text-gray-1 max-w-max whitespace-nowrap bg-[#d6d7d8]"
           >
             {{ props.item.location }}
-          </div>
-          <strong>
-            <h1
-              class="text-black text-[15px] hover:text-[#388FF3] transition-all duration-500 cursor-pointer h-[80px]"
-            >
-              {{ props.item.descraption }}
-            </h1>
-          </strong>
-          <p class="text-[#8E9297] text-[12px]">{{ props.item.date }}</p>
-          <h4 class="text-[#8E9297] text-[12px]">
+          </span>
+
+          <h1
+            class="font-semibold hover:text-[#388FF3] text-black duration-300 md:text-lg leading-130 line-clamp-2 group-hover:text-blue transition-300 text-sm leading-130 group-hover/card:text-blue transition-300 h-[36px] md:h-[56px]"
+          >
+            {{ props.item.descraption }}
+          </h1>
+
+          <p class="text-xs font-semibold md:text-sm leading-130 text-gray-1">
+            {{ props.item.date }}
+          </p>
+
+          <p class="mt-2 text-base font-semibold text-[#63676C] text-secondary">
             {{ props.item.phoneNumber }}
+          </p>
+        </div>
+
+        <div class="flex items-end gap-2 mt-auto">
+          <h4 class="text-base font-bold text-black md:text-2xl leading-130">
+            {{ props.item.cost   }}
           </h4>
-          <h2 class="flex gap-2">
-            {{ props.item.cost }}
-            <p class="text-[#388FF3]">UZS</p>
-          </h2>
+          <span
+            class="text-xs font-medium leading-5 uppercase text-blue md:leading-6 md:text-base text-[#388FF3]"
+            >sum</span
+          >
         </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>

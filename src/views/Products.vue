@@ -51,9 +51,11 @@ const closeModal = () => {
       </div>
       <div>
         <strong><h1 class="text-[30px] ml-11">Результаты поиска</h1></strong>
-        <div class="flex items-center">
+        <div class="flex items-center gap-2">
           <input type="text" class=" md:w-[700px] h-[40px] rounded-md ml-11 border placeholder:pl-4 sm:w-[300px]" placeholder="Search">
           <span class="sm:block md:hidden icon-Frame-2087326051-converted text-[30px]" @click="openModal"></span>
+          <img class="w-5 h-5" src="../../public/list.png" alt="">
+          <img class="w-5 h-5" src="../../public/Vector.png" alt="">
         </div>
         <div class="grid w-full grid-cols-2 gap-6 my-6 sm:grid-cols-2 lg:grid-cols-4 md:my-10 ">
           <ProductItem v-for="item in products" :key="item.id" :item="item" />

@@ -24,7 +24,7 @@ const router = createRouter({
       component: Products,
     },
     {
-      path: "/about/:id",
+      path: "/products/:id",
       name: "about",
       meta: {
         layout: "defoult",
